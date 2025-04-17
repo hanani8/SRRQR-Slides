@@ -1,12 +1,7 @@
 h2 {
-    color: #2B90B6;
     font-family: Helvetica Neue;
-    text-transform: uppercase;
 }
 
-h2.tight {
-    margin-top: 0.1rem;
-  }
 
 .heading{
     color: #2B90B6;
@@ -53,16 +48,37 @@ h2.tight {
     padding: .1rem .5rem;
     border-left: 4px solid goldenrod;
     border-radius: 0.75rem;
-    max-width: 90%;
+    max-width: 96%;
     margin: 1rem 1rem;
     box-shadow: 0 0 20px rgba(255, 215, 0, 0.05);
   }
 
-[v-click] {
-  opacity: 0;
-  transition: opacity 0.6s ease-in;
-}
-
-[v-click].slidev-v-click-visible {
-  opacity: 1;
-}
+.wrong-stamp {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-20deg);
+    font-size: 4rem;
+    font-weight: 900;
+    color: red;
+    opacity: 1;
+    pointer-events: none;
+    user-select: none;
+    text-transform: uppercase;
+    border: 5px solid red;
+    padding: 0.5em 1.6em;
+    border-radius: 0.2em;
+    background: transparent;
+    animation: stamp-in 0.9s ease-in forwards;
+  }
+  
+  @keyframes stamp-in {
+    0% {
+      transform: translate(-50%, -50%) rotate(-20deg) scale(0.8);
+      opacity: 0;
+    }
+    100% {
+      transform: translate(-50%, -50%) rotate(-20deg) scale(1);
+      opacity: 1;
+    }
+  }
